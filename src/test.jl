@@ -1,6 +1,6 @@
 using Convex, SCS, SchattenNorms
 
-set_default_solver(SCSSolver(verbose=2))
+set_default_solver(SCSSolver(verbose=2, acceleration_lookback=1, alpha=1.9))
 
 K = 1000
 n = 2

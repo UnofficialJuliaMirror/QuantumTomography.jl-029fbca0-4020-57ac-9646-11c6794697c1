@@ -146,7 +146,7 @@ begin
                  means::Vector{Float64},
                  vars = ones(length(means));
                  #solver = MosekSolver(LOG=0))
-                 solver = SCS.SCSSolver(verbose=0, max_iters=10_000, eps = 1e-8))
+                 solver = SCS.SCSSolver(verbose=0, max_iters=10_000, eps = 1e-8, acceleration_lookback=1, alpha=1.9))
 
         if length(means) != length(vars) || size(method.pred,1) != length(means)
             error("Size of observations and predictons do not match.")
